@@ -1,0 +1,11 @@
+#!/bin/bash
+
+file_name=@1
+
+yosys -p "read_verilog and_gate.v; synth_ice40 -json and_gate.json"
+
+nextpnr-ice40 --hx1k --pcf ../Go_Board_Constraints.pcf --package vq100 --json and_gate.json --asc and_gate.txt
+
+icepack and_gate.txt and_gate.bin
+
+sudo iceprog and_gate.bin
