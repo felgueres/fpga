@@ -1,4 +1,4 @@
-Notes on programming FPGA
+Workflow notes
 
 Opensource toolchain: https://projectf.io/posts/building-ice40-fpga-toolchain/
 
